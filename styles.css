@@ -1,0 +1,360 @@
+/*
+|--------------------------------------------------------------------------
+| Hoja de Estilos Principal (styles.css)
+|--------------------------------------------------------------------------
+|
+| Este archivo proporciona los estilos básicos para la aplicación de gramática.
+| Está diseñado para ser legible, limpio y fácilmente personalizable.
+| Se utilizan variables CSS para colores y fuentes, lo que facilita los cambios globales.
+|
+*/
+
+/* --- Variables Globales --- */
+:root {
+    --primary-color: #005A9C;   /* Azul corporativo */
+    --secondary-color: #007BFF; /* Azul más brillante para enlaces y botones */
+    --accent-color: #FFC107;    /* Amarillo para acentos y tips */
+    --background-color: #f8f9fa; /* Gris muy claro para el fondo */
+    --text-color: #333;         /* Color de texto principal */
+    --light-gray: #e9ecef;      /* Gris claro para bordes y fondos de tablas */
+    --white-color: #ffffff;
+    --font-primary: 'Roboto', sans-serif;
+    --font-secondary: 'Lato', sans-serif;
+}
+
+/* --- Reseteo y Estilos Base --- */
+body {
+    font-family: var(--font-secondary);
+    line-height: 1.6;
+    margin: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-primary);
+    font-weight: 500;
+    color: var(--primary-color);
+}
+
+a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* --- Encabezado y Navegación --- */
+.main-header {
+    background-color: var(--white-color);
+    padding: 1rem 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    border-bottom: 3px solid var(--primary-color);
+}
+
+.main-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main-header h1 {
+    margin: 0;
+    font-size: 1.8rem;
+}
+
+.main-header h1 a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.main-header nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.main-header nav a {
+    font-weight: 700;
+    font-size: 1rem;
+    text-transform: uppercase;
+    padding-bottom: 5px;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.3s ease;
+}
+
+.main-header nav a:hover {
+    color: var(--primary-color);
+    border-bottom-color: var(--secondary-color);
+    text-decoration: none;
+}
+
+
+/* --- Contenido Principal --- */
+.main-content {
+    flex: 1;
+    padding: 2rem 0;
+}
+
+/* --- Pie de Página --- */
+.main-footer {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    text-align: center;
+    padding: 1.5rem 0;
+    margin-top: auto;
+}
+
+.main-footer a {
+    color: var(--accent-color);
+}
+
+/* --- Estilos de la Página de Inicio --- */
+.welcome-banner {
+    text-align: center;
+    padding: 3rem 1rem;
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    border-radius: 8px;
+    margin-bottom: 2rem;
+}
+
+.welcome-banner h2 {
+    color: var(--white-color);
+    font-size: 2.5rem;
+    margin-top: 0;
+}
+
+.intro-text {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.navigation-cards {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.card {
+    background: var(--white-color);
+    border: 1px solid var(--light-gray);
+    border-radius: 8px;
+    padding: 2rem;
+    width: 45%;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+
+.card h3 {
+    margin-top: 0;
+    border-bottom: 2px solid var(--light-gray);
+    padding-bottom: 0.5rem;
+}
+
+.button {
+    display: inline-block;
+    background-color: var(--secondary-color);
+    color: var(--white-color);
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-top: 1rem;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    text-decoration: none;
+}
+
+/* --- Estilos de las Páginas de Gramática (A1/A2) --- */
+.level-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    border-bottom: 2px solid var(--light-gray);
+    padding-bottom: 1rem;
+}
+
+.level-header h2 {
+    font-size: 2.8rem;
+}
+
+.grammar-section {
+    background: var(--white-color);
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border-radius: 8px;
+    border-left: 5px solid var(--primary-color);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.grammar-section h3 {
+    margin-top: 0;
+    font-size: 1.8rem;
+    border-bottom: 1px solid var(--light-gray);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.grammar-section h4 {
+    font-size: 1.4rem;
+    color: var(--secondary-color);
+    margin-top: 1.5rem;
+}
+
+.grammar-section ul {
+    padding-left: 20px;
+}
+
+.grammar-section li {
+    margin-bottom: 0.5rem;
+}
+
+/* --- Estilos para Tablas --- */
+.table-container {
+    overflow-x: auto; /* Para responsividad en móviles */
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border: 1px solid var(--light-gray);
+}
+
+thead th {
+    background-color: var(--light-gray);
+    font-family: var(--font-primary);
+    font-weight: 700;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+/* --- Elementos Especiales (Tips, Ejercicios) --- */
+.tip, .interactive-area, .tip-section {
+    margin-top: 1.5rem;
+    padding: 1.5rem;
+    border-radius: 5px;
+}
+
+.tip, .tip-section {
+    background-color: #fffbe6; /* Amarillo muy claro */
+    border-left: 5px solid var(--accent-color);
+}
+
+.tip strong, .tip-section strong {
+    color: #c79100;
+}
+
+.interactive-area {
+    background-color: #e9f7ff; /* Azul muy claro */
+    border-left: 5px solid var(--secondary-color);
+}
+
+.interactive-area h4 {
+    margin-top: 0;
+    color: var(--secondary-color);
+}
+
+/* --- Estilos para Ejercicios Interactivos (desde main.js) --- */
+.answer-input {
+    border: 2px solid var(--light-gray);
+    padding: 8px;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.answer-input:focus {
+    outline: none;
+    border-color: var(--secondary-color);
+}
+
+.answer-input.correct {
+    border-color: #28a745; /* Verde éxito */
+    background-color: #e9f7ef;
+}
+
+.answer-input.incorrect {
+    border-color: #dc3545; /* Rojo error */
+    background-color: #f8d7da;
+}
+
+.feedback-area {
+     margin-top: 1rem;
+     padding: 1rem;
+     border-radius: 5px;
+     display: none; /* Oculto por defecto, JS lo muestra */
+}
+
+.feedback-correct {
+     background-color: #d4edda;
+     color: #155724;
+     border: 1px solid #c3e6cb;
+}
+
+.feedback-incorrect {
+     background-color: #f8d7da;
+     color: #721c24;
+     border: 1px solid #f5c6cb;
+}
+
+.check-button {
+    background-color: var(--secondary-color);
+    color: var(--white-color);
+    padding: 0.6rem 1.2rem;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 700;
+    margin-left: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.check-button:hover {
+    background-color: var(--primary-color);
+}
+
+.exercise-item {
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.exercise-item label {
+    font-weight: 500;
+}
